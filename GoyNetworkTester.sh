@@ -22,7 +22,7 @@ echo "--------------------------------------------"
 echo
 
 REVERSEDNS=`host 8.8.8.8`
-if [ $? != 0 ]; then # $? = resultaat van een command. Als dit 0 is dan is het geslaagd anders niet geslaagd
+if [ $? != 0 ]; then # $?
         echo "Reverse DNS 			[FAIL]"
 	echo "Pingen van Hostnaam is niet gelukt"
 else
@@ -53,7 +53,7 @@ fi
 dhcp_func(){
 
 
-RESTART_NETWORKING=`/etc/init.d/networking restart` # Herstart het netwerk
+RESTART_NETWORKING=`/etc/init.d/networking restart` # network DHCP
 
 echo
 echo "***      Performing DHCP tests          ***"
@@ -76,7 +76,7 @@ fi
 
 }
 
-# ********************************************** Check correct GW is set *******************************
+# ********************************************** Check correct Gateway is set *******************************
 gateway_func(){
 echo
 echo "***     Check if Correct GW is set     ***"
@@ -96,7 +96,7 @@ fi
 
 }
 
-# ********************************************** Ping domainnaam *******************************
+# ********************************************** Ping domain *******************************
 
 ping_domain(){
 
@@ -245,8 +245,7 @@ version() {
 	echo  
 	echo "############################"
 	echo "Versie:	V_2.0" 
-	echo "Auteur:	Valentin Bajrami"
-	echo "Date:	05-12-2011"
+	echo "Auteur:	Valentin Bajrami" #recode from valentin bajrami germany network security
 	echo "Script: Tests basic network functionality"
 	echo "############################"
 	echo
@@ -263,7 +262,7 @@ echo "--------------------------------------------"
 echo
 
 REVERSEDNS=`host 8.8.8.8`
-if [ $? != 0 ]; then # $? = resultaat van een command. Als dit 0 is dan is het geslaagd anders niet geslaagd
+if [ $? != 0 ]; then # $? = reserve network dns
         echo "Reverse DNS 			[FAIL]"
 	echo "Pingen van Hostnaam is niet gelukt"
 else
@@ -294,7 +293,7 @@ fi
 dhcp_func(){
 
 
-RESTART_NETWORKING=`/etc/init.d/networking restart` # Herstart het netwerk
+RESTART_NETWORKING=`/etc/init.d/networking restart` # Restart network
 
 echo
 echo "***      Performing DHCP tests          ***"
@@ -337,7 +336,7 @@ fi
 
 }
 
-# ********************************************** Ping domainnaam *******************************
+# ********************************************** Ping domain *******************************
 
 ping_domain(){
 
@@ -472,7 +471,7 @@ echo "2. NSLOOKUP"
 echo "3. DHCP"
 echo "4. GATEWAY"
 echo "5. SSH"
-echo "6. Mem Usage"
+echo "6. Memory Usage"
 echo "7. Exit"
 echo "8. Test ALL"
 echo
